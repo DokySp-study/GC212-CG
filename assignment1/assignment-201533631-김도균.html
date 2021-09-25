@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- For display korean in web browser -->
+<meta charset="UTF-8">
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+uniform vec4 uOffset;
+attribute vec4 vColor;
+// share value between vertex-shader, fragment-shader
+varying vec4 fColor;
+
+void main() {
+    fColor = vColor;
+    gl_Position = vPosition + uOffset;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+varying vec4 fColor;
+
+void main() {
+    gl_FragColor = fColor;
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="draw.js"></script>
+</head>
+
+<body>
+ID: 201533631 NAME: 김도균 <br>
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</body>
+</html>
