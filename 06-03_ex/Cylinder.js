@@ -24,12 +24,15 @@ window.onload = function init()
     gl = WebGLUtils.setupWebGL( canvas );
     if ( !gl ) { alert( "WebGL isn't available" ); }
 
-    var myCylinder = cylinder(72, 3, true);
-    myCylinder.scale(0.5, 1.0, 0.5);
-    myCylinder.rotate(45.0, [ 1, 1, 1]);
-    myCylinder.translate(0.5, 0.0, 0.0);
+    var myCylinder = cylinder(12, 3, true);
+    myCylinder.scale(1, 1, 1);
+    // myCylinder.rotate(45.0, [ 1, 1, 1]);
+    // myCylinder.translate(0.5, 0.0, 0.0);
 
     points = myCylinder.TriangleVertices;
+
+    console.dir(points)
+
     colors = myCylinder.TriangleVertexColors;
 
     gl.viewport( 0, 0, canvas.width, canvas.height );
